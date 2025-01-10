@@ -9,7 +9,7 @@
     --light-grayish-magenta: hsl(300, 24%, 96%);
     --white: hsl(0, 0%, 100%);
 
-    --fs-normal: clamp(1rem, 0.29vw + 0.944rem, 1.125rem);
+    --fs-normal: clamp(0.9375rem, 0.29vw + 0.944rem, 1.125rem);
     --fs-large: clamp(2.625rem, 3.188vw + 2.007rem, 52px);
     --mx-width: clamp(310px, 90%, 1200px);
 }
@@ -28,14 +28,14 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0.8;
 }
 
 .wrapper {
     margin-inline: auto;
-    max-width: 75rem;
-    width: 90%;
+    /* max-width: 75rem;
+    width: 90%; */
     margin-top: 4rem;
+    max-width: var(--mx-width);
 }
 
 .hero {
@@ -133,7 +133,6 @@ main {
 
 .testimony {
     font-size: var(--fs-normal);
-    min-width: 25ch;
     color: var(--light-grayish-magenta);
 }
 
@@ -167,7 +166,7 @@ main {
 
     .rating-container {
         padding: .8em 2em;
-        width: 27.8125rem;
+        max-width: 27.8125rem;
         flex-flow: row;
         justify-content: center;
         gap: 1.5rem;
@@ -210,5 +209,16 @@ main {
     .testimonial:nth-of-type(3) {
         position: relative;
         top: 2.5rem;
+    }
+}
+
+@media (width >=1024px) {
+    .rating-container {
+        padding: .6em 1em;
+        min-width: 400px;
+        font-size: 1rem;
+        flex-flow: row;
+        justify-content: center;
+        gap: 1.5rem;
     }
 }
